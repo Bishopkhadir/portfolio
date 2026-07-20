@@ -1,507 +1,670 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khadir | Web Developer Portfolio</title>
-  <style>
-    /* === GLOBAL RESET & BODY === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lawal Quadri · Web Developer</title>
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f8f9fa;
-    color: #212529;
-    line-height: 1.6;
-    padding: 2rem 1rem;
-}
+    <!-- Google Font: Inter (Modern & Professional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
 
-/* === HEADER WITH GRADIENT === */
-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    text-align: center;
-    margin-bottom: 2.5rem;
-    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
-}
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.3rem;
-    letter-spacing: -0.5px;
-}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
-/* === SKILLS SECTION === */
-#skills {
-    background: white;
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    margin-bottom: 2.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem 1.5rem;
-    justify-content: center;
-}
+        /* ===== NAVIGATION ===== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 2.5rem;
+        }
 
-#skills span {
-    background: #eef2ff;
-    color: #4f46e5;
-    padding: 0.4rem 1.2rem;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            color: #0f172a;
+        }
 
-/* === PROJECT GRID === */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .nav-logo span {
+            color: #3b82f6;
+        }
 
-/* === PROJECT CARDS === */
-.project-card {
-    background: white;
-    padding: 1.8rem 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid rgba(0,0,0,0.03);
-}
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+        }
 
-.project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-}
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
 
-.project-card h3 {
-    color: #1e293b;
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-    border-bottom: 3px solid #667eea;
-    padding-bottom: 0.4rem;
-    display: inline-block;
-}
+        .nav-links a:hover {
+            color: #0f172a;
+        }
 
-.project-card ul {
-    list-style: none;
-    margin: 1rem 0 1.2rem 0;
-    padding: 0;
-}
+        .nav-links .primary-btn {
+            background: #0f172a;
+            color: white;
+            padding: 0.5rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
 
-.project-card ul li {
-    padding: 0.3rem 0 0.3rem 1.5rem;
-    position: relative;
-    font-size: 0.95rem;
-    color: #334155;
-}
+        .nav-links .primary-btn:hover {
+            background: #1e293b;
+            color: white;
+            transform: scale(1.02);
+        }
 
-.project-card ul li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: #667eea;
-    font-weight: bold;
-}
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: #0f172a;
+            color: white;
+            border-radius: 24px;
+            padding: 4rem 3.5rem;
+            margin-bottom: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.2);
+        }
 
-/* === BUTTON GROUP === */
-.btn-group {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-}
+        /* Subtle background glow */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
 
-.btn-group a {
-    text-decoration: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.2s ease;
-    border: 2px solid transparent;
-}
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
 
-.btn-group a:first-child {
-    background: #1e293b;
-    color: white;
-    border-color: #1e293b;
-}
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-.btn-group a:first-child:hover {
-    background: #0f172a;
-    transform: scale(1.02);
-}
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
 
-.live-btn {
-    background: transparent;
-    color: #4f46e5;
-    border-color: #4f46e5 !important;
-}
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-.live-btn:hover {
-    background: #4f46e5;
-    color: white !important;
-    transform: scale(1.02);
-}
-    /* ---------- RESET & BASE ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
-      padding: 20px;
-    }
+        .hero .bio {
+            font-size: 1.05rem;
+            color: #94a3b8;
+            max-width: 540px;
+            margin-bottom: 2rem;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-    /* ---------- HEADER / HERO ---------- */
-    .hero {
-      text-align: center;
-      padding: 60px 20px 40px;
-      border-bottom: 1px solid #1e293b;
-    }
+        .hero-actions .btn-primary {
+            background: #3b82f6;
+            color: white;
+            padding: 0.7rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
 
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      background: linear-gradient(145deg, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
+        .hero-actions .btn-primary:hover {
+            background: #2563eb;
+            transform: scale(1.03);
+        }
 
-    .hero .title {
-      font-size: 1.4rem;
-      color: #94a3b8;
-      margin-top: 8px;
-      font-weight: 300;
-    }
+        .hero-actions .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 0.7rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1.5px solid #475569;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
 
-    .hero p {
-      max-width: 600px;
-      margin: 16px auto 24px;
-      color: #cbd5e1;
-      font-size: 1.1rem;
-    }
+        .hero-actions .btn-outline:hover {
+            border-color: #94a3b8;
+            color: #f1f5f9;
+        }
 
-    .social-links a {
-      display: inline-block;
-      margin: 0 12px;
-      color: #94a3b8;
-      font-size: 1.3rem;
-      text-decoration: none;
-      transition: 0.2s;
-      font-weight: 500;
-    }
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 2rem;
+            color: #0f172a;
+        }
 
-    .social-links a:hover {
-      color: #38bdf8;
-    }
+        .section-title span {
+            color: #3b82f6;
+        }
 
-    /* ---------- SECTION TITLES ---------- */
-    section {
-      margin: 48px 0;
-    }
+        /* ===== SKILLS ===== */
+        .skills-wrapper {
+            background: white;
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f6;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            margin-bottom: 3.5rem;
+            justify-content: center;
+        }
 
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-      color: #f1f5f9;
-      border-left: 4px solid #38bdf8;
-      padding-left: 16px;
-    }
+        .skills-wrapper span {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 0.4rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.2px;
+        }
 
-    /* ---------- PROJECTS ---------- */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
+        /* ===== PROJECT GRID ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
 
-    .project-card {
-      background: #1e293b;
-      padding: 24px;
-      border-radius: 16px;
-      border: 1px solid #334155;
-      transition: 0.25s ease;
-    }
+        /* ===== PROJECT CARDS (Professional) ===== */
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: #38bdf8;
-      box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
-    }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
 
-    .project-card h3 {
-      font-size: 1.3rem;
-      color: #f1f5f9;
-      margin-bottom: 6px;
-    }
+        /* Card header / thumbnail placeholder */
+        .card-thumb {
+            height: 12px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
 
-    .project-card p {
-      color: #94a3b8;
-      font-size: 0.95rem;
-      margin-bottom: 14px;
-    }
+        .card-body {
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .project-card a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+        .card-body h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
 
-    .project-card a:hover {
-      text-decoration: underline;
-    }
+        .card-body ul {
+            list-style: none;
+            margin: 0.5rem 0 1.2rem 0;
+            flex-grow: 1;
+        }
 
-    /* ---------- SKILLS ---------- */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+        .card-body ul li {
+            padding: 0.25rem 0 0.25rem 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: #334155;
+        }
 
-    .skill-tag {
-      background: #1e293b;
-      border: 1px solid #334155;
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      transition: 0.2s;
-    }
+        .card-body ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: 700;
+        }
 
-    .skill-tag:hover {
-      border-color: #38bdf8;
-      color: #f1f5f9;
-    }
+        /* Tech tags inside cards */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
 
-    /* ---------- CONTACT ---------- */
-    .contact-box {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 16px;
-      text-align: center;
-      border: 1px solid #334155;
-    }
+        .tech-tags span {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            text-transform: uppercase;
+        }
 
-    .contact-box p {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-    }
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
 
-    .contact-box a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: 600;
-    }
+        .btn-group a {
+            text-decoration: none;
+            padding: 0.45rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+            border: 1.5px solid transparent;
+            flex: 1 0 auto;
+            text-align: center;
+        }
 
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
+        .btn-group .repo-btn {
+            background: #f1f5f9;
+            color: #0f172a;
+            border-color: #e2e8f0;
+        }
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 32px 0 16px;
-      border-top: 1px solid #1e293b;
-      color: #64748b;
-      font-size: 0.9rem;
-      margin-top: 24px;
-    }
+        .btn-group .repo-btn:hover {
+            background: #e2e8f0;
+        }
 
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .hero .title {
-        font-size: 1.1rem;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        .btn-group .demo-btn {
+            background: #0f172a;
+            color: white;
+            border-color: #0f172a;
+        }
+
+        .btn-group .demo-btn:hover {
+            background: #1e293b;
+            transform: scale(1.02);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: 4rem;
+            padding: 2.5rem 0 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        footer p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        footer .social-links a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 1.8rem;
+            transition: color 0.2s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #0f172a;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero,
+        .skills-wrapper,
+        .project-card {
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.05s;
+        }
+        .project-card:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+        .project-card:nth-child(4) {
+            animation-delay: 0.15s;
+        }
+        .project-card:nth-child(5) {
+            animation-delay: 0.2s;
+        }
+        .project-card:nth-child(6) {
+            animation-delay: 0.25s;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: flex-start;
+            }
+
+            .hero {
+                padding: 2.5rem 1.8rem;
+                border-radius: 16px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer .social-links a {
+                margin: 0 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- HERO -->
-    <header class="hero">
-      <h1>Khadir</h1>
-      <div class="title">Web Developer &amp; JavaScript Enthusiast</div>
-      <p>
-        I build interactive web applications with clean code, modern tools, and a strong focus on user experience.
-      </p>
-      <div class="social-links">
-        <a href="https://github.com/Bishopkhadir" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
-      </div>
-    </header>
+    <div class="container">
 
-    <!-- PROJECTS -->
-    <section>
-      <h2 class="section-title">🚀 Projects</h2>
-      <div class="projects-grid">
+        <!-- ===== NAVIGATION ===== -->
+        <nav>
+            <div class="nav-logo">Lawal<span>.</span></div>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="https://www.linkedin.com/in/lawalquadri" target="_blank" class="primary-btn">LinkedIn</a>
+            </div>
+        </nav>
 
-        <!-- Rock Paper Scissors -->
-        <div class="project-card">
-          <h3>✊ Rock Paper Scissors</h3>
-          <p>Classic game with a clean UI, score tracking, and reset functionality.</p>
-          <a href="https://github.com/Bishopkhadir/rock-paper-scissors" target="_blank">View Repo →</a>
-        </div>
+        <!-- ===== HERO SECTION ===== -->
+        <header class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">✦ Open to work</div>
+                <h1>
+                    Hi, I'm <br />
+                    <span class="highlight">Lawal Quadri</span>
+                </h1>
+                <p class="subtitle">Frontend Developer · JavaScript &amp; React</p>
+                <p class="bio">
+                    I build responsive, user-centric web applications with clean code
+                    and pixel-perfect design. Passionate about turning complex problems
+                    into elegant digital solutions.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://www.linkedin.com/in/lawalquadri" target="_blank" class="btn-primary">Let's Connect</a>
+                    <a href="#projects" class="btn-outline">View My Work ↓</a>
+                </div>
+            </div>
+        </header>
 
-     <!-- WEATHER APP -->
-<div class="project-card">
-    <h3>Weather App</h3>
-    <ul>
-        <li>Fetches real-time weather data using the OpenWeather API</li>
-        <li>Displays temperature, humidity, and conditions based on user geolocation</li>
-        <li>Built with vanilla JavaScript, async/await, and CSS Flexbox</li>
-    </ul>
-    <div class="btn-group">
-        <a href="https://github.com/bishopkhadir/weather-app" target="_blank">View Repo</a>
-        <a href="https://bishopkhadir.github.io/weather-app/" target="_blank" class="live-btn">Live Demo →</a>
+        <!-- ===== SKILLS ===== -->
+        <section id="skills">
+            <div class="skills-wrapper">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript (ES6+)</span>
+                <span>React</span>
+                <span>Git &amp; GitHub</span>
+                <span>REST APIs</span>
+                <span>Responsive Design</span>
+                <span>Tailwind CSS</span>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+
+        <section class="projects-grid" id="projects">
+
+            <!-- 1. Weather App -->
+            <article class="project-card">
+                <div class="card-thumb"></div>
+                <div class="card-body">
+                    <h3>Weather App</h3>
+                    <ul>
+                        <li>Real-time weather via OpenWeather API</li>
+                        <li>Geolocation &amp; search by city</li>
+                        <li>Dynamic backgrounds based on conditions</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>JavaScript</span>
+                        <span>API</span>
+                        <span>CSS Flexbox</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://github.com/bishopkhadir/weather-app" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://bishopkhadir.github.io/weather-app/" target="_blank" class="demo-btn">Live Demo →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. Todo List -->
+            <article class="project-card">
+                <div class="card-thumb"></div>
+                <div class="card-body">
+                    <h3>Todo List</h3>
+                    <ul>
+                        <li>Full CRUD with add, edit, delete, and complete</li>
+                        <li>Persistent data with localStorage</li>
+                        <li>Filter tasks by status (All / Active / Done)</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>JavaScript</span>
+                        <span>DOM</span>
+                        <span>localStorage</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://github.com/bishopkhadir/todo-list" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://bishopkhadir.github.io/todo-list/" target="_blank" class="demo-btn">Live Demo →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. Calculator -->
+            <article class="project-card">
+                <div class="card-thumb"></div>
+                <div class="card-body">
+                    <h3>Calculator</h3>
+                    <ul>
+                        <li>Arithmetic operations with keyboard support</li>
+                        <li>Edge-case handling (division by zero, etc.)</li>
+                        <li>Clean, responsive grid-based UI</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>CSS Grid</span>
+                        <span>JavaScript</span>
+                        <span>Events</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://github.com/bishopkhadir/calculator" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://bishopkhadir.github.io/calculator/" target="_blank" class="demo-btn">Live Demo →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. Rock Paper Scissors -->
+            <article class="project-card">
+                <div class="card-thumb"></div>
+                <div class="card-body">
+                    <h3>Rock Paper Scissors</h3>
+                    <ul>
+                        <li>Play against an AI with randomized moves</li>
+                        <li>Real-time score tracking &amp; result feedback</li>
+                        <li>Animated transitions for each round</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>JavaScript</span>
+                        <span>CSS Transitions</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://github.com/bishopkhadir/rock-paper-scissors" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://bishopkhadir.github.io/rock-paper-scissors/" target="_blank" class="demo-btn">Live Demo →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5. Tic Tac Toe -->
+            <article class="project-card">
+                <div class="card-thumb"></div>
+                <div class="card-body">
+                    <h3>Tic Tac Toe</h3>
+                    <ul>
+                        <li>Two-player mode with turn-based logic</li>
+                        <li>Highlights winning combinations</li>
+                        <li>Reset and replay functionality</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>JavaScript</span>
+                        <span>Event Delegation</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://github.com/bishopkhadir/tic-tac-toe" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://bishopkhadir.github.io/tic-tac-toe/" target="_blank" class="demo-btn">Live Demo →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 6. Quiz App -->
+            <article class="project-card">
+                <div class="card-thumb"></div>
+                <div class="card-body">
+                    <h3>Quiz App</h3>
+                    <ul>
+                        <li>Dynamic multiple-choice questions</li>
+                        <li>Score tracking and answer validation</li>
+                        <li>Results summary with correct answers</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>JavaScript</span>
+                        <span>CSS</span>
+                        <span>Data Structures</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://github.com/bishopkhadir/quiz-app" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://bishopkhadir.github.io/quiz-app/" target="_blank" class="demo-btn">Live Demo →</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>&copy; 2025 Lawal Quadri · Built with HTML &amp; CSS</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/lawalquadri" target="_blank">LinkedIn</a>
+                <a href="https://github.com/bishopkhadir" target="_blank">GitHub</a>
+            </div>
+        </footer>
+
     </div>
-</div>
+    <!-- end container -->
 
-<!-- TODO LIST -->
-<div class="project-card">
-    <h3>Todo List</h3>
-    <ul>
-        <li>Full CRUD functionality – add, edit, delete, and mark tasks as complete</li>
-        <li>Persists data using localStorage so tasks survive page refresh</li>
-        <li>Built with JavaScript DOM manipulation and CSS custom properties</li>
-    </ul>
-    <div class="btn-group">
-        <a href="https://github.com/bishopkhadir/todo-list" target="_blank">View Repo</a>
-        <a href="https://bishopkhadir.github.io/todo-list/" target="_blank" class="live-btn">Live Demo →</a>
-    </div>
-</div>
-
-<!-- CALCULATOR -->
-<div class="project-card">
-    <h3>Calculator</h3>
-    <ul>
-        <li>Performs basic arithmetic operations with a clean, responsive UI</li>
-        <li>Handles keyboard input and edge cases like division by zero</li>
-        <li>Built with HTML, CSS Grid, and JavaScript event listeners</li>
-    </ul>
-    <div class="btn-group">
-        <a href="https://github.com/bishopkhadir/calculator" target="_blank">View Repo</a>
-        <a href="https://bishopkhadir.github.io/calculator/" target="_blank" class="live-btn">Live Demo →</a>
-    </div>
-</div>
-
-        <!-- Restaurant Page -->
-        <div class="project-card">
-          <h3>🍽️ Restaurant Page</h3>
-          <p>Multi-page restaurant site built with Webpack and ES6 modules.</p>
-          <a href="https://github.com/Bishopkhadir/restaurant-page" target="_blank">View Repo →</a>
-        </div>
-
-        <!-- Tic Tac Toe -->
-        <div class="project-card">
-          <h3>❌⭕ Tic Tac Toe</h3>
-          <p>Two-player game with score tracking, winning line highlight, and reset.</p>
-          <a href="https://github.com/Bishopkhadir/tic-tac-toe" target="_blank">View Repo →</a>
-        </div>
-
-        <!-- Etch-a-Sketch -->
-        <div class="project-card">
-          <h3>🎨 Etch-a-Sketch</h3>
-          <p>Interactive drawing grid with adjustable size and hover effects.</p>
-          <a href="https://github.com/Bishopkhadir/etch-a-sketch" target="_blank">View Repo →</a>
-        </div>
-
-        <!-- Library App -->
-        <div class="project-card">
-          <h3>📚 Library App</h3>
-          <p>Virtual book library with add, remove, and toggle read status, saved in localStorage.</p>
-          <a href="https://github.com/Bishopkhadir/library-app" target="_blank">View Repo →</a>
-        </div>
-
-        <!-- Sign-up Form -->
-        <div class="project-card">
-          <h3>📝 Sign-up Form</h3>
-          <p>Styled form with validation, password matching, and success feedback.</p>
-          <a href="https://github.com/Bishopkhadir/signup-form" target="_blank">View Repo →</a>
-        </div>
-
-        <!-- Admin Dashboard -->
-        <div class="project-card">
-          <h3>📊 Admin Dashboard</h3>
-          <p>CSS Grid layout with sidebar, cards, dark mode, and interactive elements.</p>
-          <a href="https://github.com/Bishopkhadir/admin-dashboard" target="_blank">View Repo →</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section>
-      <h2 class="section-title">🛠️ Skills</h2>
-      <div class="skills-list">
-        <span class="skill-tag">HTML5</span>
-        <span class="skill-tag">CSS3</span>
-        <span class="skill-tag">JavaScript (ES6+)</span>
-        <span class="skill-tag">React (coming soon)</span>
-        <span class="skill-tag">Git &amp; GitHub</span>
-        <span class="skill-tag">Webpack</span>
-        <span class="skill-tag">Node.js</span>
-        <span class="skill-tag">REST APIs</span>
-        <span class="skill-tag">Responsive Design</span>
-        <span class="skill-tag">Linux / WSL</span>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section>
-      <h2 class="section-title">📬 Contact</h2>
-      <div class="contact-box">
-        <p>Let’s connect! Feel free to reach out.</p>
-        <p>
-          📧 <a href="mailto:khadir713@gmail.com">khadir713@gmail.com</a>
-        </p>
-        <p style="margin-top:8px;">
-          🔗 <a href="https://github.com/Bishopkhadir" target="_blank">GitHub</a> &middot;
-          <a href="https://linkedin.com/in/lawalquadri" target="_blank">LinkedIn</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      &copy; 2026 Khadir — Built with ❤️ and JavaScript
-    </footer>
-
-  </div>
 </body>
 </html>
