@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lawal Quadri · Web Developer</title>
 
-    <!-- Google Font: Inter (Modern & Professional) -->
+    <!-- Google Font: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
 
     <style>
-        /* ===== RESET & BASE ===== */
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
@@ -20,314 +20,246 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
+            background: #ffffff;
+            color: #0a0a0a;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            padding: 2rem 1.5rem;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 1.5rem;
         }
 
-        /* ===== NAVIGATION ===== */
+        /* ===== NAV ===== */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid #e2e8f0;
-            margin-bottom: 2.5rem;
+            padding: 0.5rem 0 2rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 4rem;
         }
 
         .nav-logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-            color: #0f172a;
-        }
-
-        .nav-logo span {
-            color: #3b82f6;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #0a0a0a;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.8rem;
+            gap: 2rem;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #475569;
-            font-weight: 500;
+            color: #444;
             font-size: 0.95rem;
-            transition: color 0.2s ease;
+            font-weight: 500;
+            transition: color 0.15s ease;
         }
 
         .nav-links a:hover {
-            color: #0f172a;
+            color: #000;
         }
 
-        .nav-links .primary-btn {
-            background: #0f172a;
+        .nav-links .linkedin-nav {
+            background: #0a66c2;
             color: white;
-            padding: 0.5rem 1.4rem;
-            border-radius: 30px;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s ease, transform 0.15s ease;
+            font-size: 0.85rem;
+            transition: background 0.15s ease;
         }
 
-        .nav-links .primary-btn:hover {
-            background: #1e293b;
+        .nav-links .linkedin-nav:hover {
+            background: #004182;
             color: white;
-            transform: scale(1.02);
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== HERO ===== */
         .hero {
-            background: #0f172a;
-            color: white;
-            border-radius: 24px;
-            padding: 4rem 3.5rem;
-            margin-bottom: 3.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.2);
-        }
-
-        /* Subtle background glow */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -30%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(4px);
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #94a3b8;
-            letter-spacing: 0.3px;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 4.5rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1.1;
+            letter-spacing: -3px;
+            line-height: 1.05;
+            color: #0a0a0a;
             margin-bottom: 0.5rem;
         }
 
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero .subtitle {
+        .hero .title {
             font-size: 1.3rem;
-            color: #cbd5e1;
             font-weight: 400;
-            margin-bottom: 0.75rem;
+            color: #555;
+            margin-bottom: 1rem;
         }
 
         .hero .bio {
             font-size: 1.05rem;
-            color: #94a3b8;
-            max-width: 540px;
-            margin-bottom: 2rem;
+            color: #666;
+            max-width: 520px;
+            margin: 0 auto 2rem auto;
         }
 
         .hero-actions {
             display: flex;
             gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .hero-actions .btn-primary {
-            background: #3b82f6;
+        .btn-primary {
+            background: #0a0a0a;
             color: white;
-            padding: 0.7rem 2rem;
+            padding: 0.7rem 2.2rem;
             border-radius: 40px;
             font-weight: 600;
             text-decoration: none;
-            transition: background 0.2s ease, transform 0.15s ease;
+            font-size: 0.95rem;
+            transition: background 0.15s ease;
+            border: 1px solid #0a0a0a;
         }
 
-        .hero-actions .btn-primary:hover {
-            background: #2563eb;
-            transform: scale(1.03);
+        .btn-primary:hover {
+            background: #333;
         }
 
-        .hero-actions .btn-outline {
+        .btn-outline {
             background: transparent;
-            color: white;
-            padding: 0.7rem 2rem;
+            color: #0a0a0a;
+            padding: 0.7rem 2.2rem;
             border-radius: 40px;
             font-weight: 600;
             text-decoration: none;
-            border: 1.5px solid #475569;
-            transition: border-color 0.2s ease, color 0.2s ease;
+            font-size: 0.95rem;
+            border: 1px solid #ddd;
+            transition: border 0.15s ease, background 0.15s ease;
         }
 
-        .hero-actions .btn-outline:hover {
-            border-color: #94a3b8;
-            color: #f1f5f9;
-        }
-
-        /* ===== SECTION TITLES ===== */
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 2rem;
-            color: #0f172a;
-        }
-
-        .section-title span {
-            color: #3b82f6;
+        .btn-outline:hover {
+            border-color: #0a0a0a;
+            background: #fafafa;
         }
 
         /* ===== SKILLS ===== */
+        .skills-section {
+            margin-bottom: 4rem;
+        }
+
+        .skills-section h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0a0a0a;
+            letter-spacing: -0.2px;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
         .skills-wrapper {
-            background: white;
-            padding: 2rem 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid #eef2f6;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem 1.2rem;
-            margin-bottom: 3.5rem;
             justify-content: center;
+            gap: 0.6rem 1rem;
         }
 
         .skills-wrapper span {
-            background: #f1f5f9;
-            color: #1e293b;
-            padding: 0.4rem 1.4rem;
+            background: #f5f5f5;
+            padding: 0.3rem 1.2rem;
             border-radius: 30px;
-            font-weight: 600;
             font-size: 0.85rem;
-            letter-spacing: 0.2px;
+            font-weight: 500;
+            color: #1a1a1a;
         }
 
-        /* ===== PROJECT GRID ===== */
+        /* ===== PROJECTS ===== */
+        .projects-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
         }
 
-        /* ===== PROJECT CARDS (Professional) ===== */
         .project-card {
-            background: white;
+            background: #fafafa;
             border-radius: 16px;
-            border: 1px solid #eef2f6;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            overflow: hidden;
-            transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.3s ease;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            border: 1px solid #f0f0f0;
+            transition: border 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
             height: 100%;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border-color: #cbd5e1;
+            border-color: #ccc;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
-        /* Card header / thumbnail placeholder */
-        .card-thumb {
-            height: 12px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-        }
-
-        .card-body {
-            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-body h3 {
-            font-size: 1.35rem;
+        .project-card h3 {
+            font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: -0.3px;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            color: #0a0a0a;
         }
 
-        .card-body ul {
+        .project-card ul {
             list-style: none;
-            margin: 0.5rem 0 1.2rem 0;
+            margin: 0.3rem 0 1.2rem 0;
             flex-grow: 1;
         }
 
-        .card-body ul li {
-            padding: 0.25rem 0 0.25rem 1.5rem;
+        .project-card ul li {
+            padding: 0.2rem 0 0.2rem 1.4rem;
             position: relative;
-            font-size: 0.95rem;
-            color: #334155;
+            font-size: 0.92rem;
+            color: #333;
         }
 
-        .card-body ul li::before {
-            content: "▹";
+        .project-card ul li::before {
+            content: "→";
             position: absolute;
             left: 0;
-            color: #3b82f6;
-            font-weight: 700;
+            color: #0a66c2;
+            font-weight: 600;
         }
 
-        /* Tech tags inside cards */
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.4rem;
             margin-bottom: 1.2rem;
         }
 
         .tech-tags span {
-            background: #f1f5f9;
-            color: #1e293b;
-            padding: 0.2rem 0.8rem;
+            background: #eaeaea;
+            padding: 0.15rem 0.8rem;
             border-radius: 20px;
             font-size: 0.7rem;
             font-weight: 600;
-            letter-spacing: 0.2px;
+            color: #1a1a1a;
             text-transform: uppercase;
+            letter-spacing: 0.2px;
         }
 
-        /* Buttons */
         .btn-group {
             display: flex;
             gap: 0.8rem;
@@ -337,42 +269,40 @@
 
         .btn-group a {
             text-decoration: none;
-            padding: 0.45rem 1.2rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 30px;
             font-weight: 600;
             font-size: 0.8rem;
-            transition: all 0.2s ease;
-            border: 1.5px solid transparent;
-            flex: 1 0 auto;
+            border: 1.5px solid #ddd;
+            color: #0a0a0a;
+            background: white;
+            transition: all 0.15s ease;
             text-align: center;
+            flex: 1 0 auto;
         }
 
-        .btn-group .repo-btn {
-            background: #f1f5f9;
-            color: #0f172a;
-            border-color: #e2e8f0;
-        }
-
-        .btn-group .repo-btn:hover {
-            background: #e2e8f0;
+        .btn-group a:hover {
+            border-color: #0a0a0a;
+            background: #0a0a0a;
+            color: white;
         }
 
         .btn-group .demo-btn {
-            background: #0f172a;
+            background: #0a0a0a;
             color: white;
-            border-color: #0f172a;
+            border-color: #0a0a0a;
         }
 
         .btn-group .demo-btn:hover {
-            background: #1e293b;
-            transform: scale(1.02);
+            background: #333;
+            border-color: #333;
         }
 
         /* ===== FOOTER ===== */
         footer {
             margin-top: 4rem;
-            padding: 2.5rem 0 1.5rem;
-            border-top: 1px solid #e2e8f0;
+            padding: 2rem 0 1rem;
+            border-top: 1px solid #f0f0f0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -381,80 +311,44 @@
         }
 
         footer p {
-            color: #64748b;
+            color: #777;
             font-size: 0.9rem;
         }
 
         footer .social-links a {
-            color: #475569;
+            color: #444;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 0.9rem;
             margin-left: 1.8rem;
-            transition: color 0.2s ease;
+            transition: color 0.15s ease;
         }
 
         footer .social-links a:hover {
-            color: #0f172a;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero,
-        .skills-wrapper,
-        .project-card {
-            animation: fadeUp 0.6s ease forwards;
-        }
-
-        .project-card:nth-child(2) {
-            animation-delay: 0.05s;
-        }
-        .project-card:nth-child(3) {
-            animation-delay: 0.1s;
-        }
-        .project-card:nth-child(4) {
-            animation-delay: 0.15s;
-        }
-        .project-card:nth-child(5) {
-            animation-delay: 0.2s;
-        }
-        .project-card:nth-child(6) {
-            animation-delay: 0.25s;
+            color: #000;
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 0.8rem;
-                align-items: flex-start;
-            }
-
-            .hero {
-                padding: 2.5rem 1.8rem;
-                border-radius: 16px;
-            }
-
+        @media (max-width: 700px) {
             .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.1rem;
+                font-size: 3rem;
+                letter-spacing: -2px;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: center;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             footer {
@@ -472,45 +366,39 @@
 
     <div class="container">
 
-        <!-- ===== NAVIGATION ===== -->
+        <!-- ===== NAV ===== -->
         <nav>
-            <div class="nav-logo">Lawal<span>.</span></div>
+            <div class="nav-logo">Lawal Quadri</div>
             <div class="nav-links">
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
-                <a href="https://www.linkedin.com/in/lawalquadri" target="_blank" class="primary-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/lawalquadri" target="_blank" class="linkedin-nav">LinkedIn</a>
             </div>
         </nav>
 
-        <!-- ===== HERO SECTION ===== -->
+        <!-- ===== HERO ===== -->
         <header class="hero">
-            <div class="hero-content">
-                <div class="hero-badge">✦ Open to work</div>
-                <h1>
-                    Hi, I'm <br />
-                    <span class="highlight">Lawal Quadri</span>
-                </h1>
-                <p class="subtitle">Frontend Developer · JavaScript &amp; React</p>
-                <p class="bio">
-                    I build responsive, user-centric web applications with clean code
-                    and pixel-perfect design. Passionate about turning complex problems
-                    into elegant digital solutions.
-                </p>
-                <div class="hero-actions">
-                    <a href="https://www.linkedin.com/in/lawalquadri" target="_blank" class="btn-primary">Let's Connect</a>
-                    <a href="#projects" class="btn-outline">View My Work ↓</a>
-                </div>
+            <h1>Lawal Quadri</h1>
+            <p class="title">Web Developer · JavaScript &amp; React</p>
+            <p class="bio">
+                Building responsive, user-centric web apps with clean code.
+                Passionate about solving problems through elegant design.
+            </p>
+            <div class="hero-actions">
+                <a href="https://www.linkedin.com/in/lawalquadri" target="_blank" class="btn-primary">Connect on LinkedIn</a>
+                <a href="#projects" class="btn-outline">See My Work ↓</a>
             </div>
         </header>
 
         <!-- ===== SKILLS ===== -->
-        <section id="skills">
+        <section class="skills-section" id="skills">
+            <h2>✦ Tech Stack</h2>
             <div class="skills-wrapper">
                 <span>HTML5</span>
                 <span>CSS3</span>
                 <span>JavaScript (ES6+)</span>
                 <span>React</span>
-                <span>Git &amp; GitHub</span>
+                <span>Git</span>
                 <span>REST APIs</span>
                 <span>Responsive Design</span>
                 <span>Tailwind CSS</span>
@@ -518,145 +406,118 @@
         </section>
 
         <!-- ===== PROJECTS ===== -->
-        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <section class="projects-section" id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
 
-        <section class="projects-grid" id="projects">
-
-            <!-- 1. Weather App -->
-            <article class="project-card">
-                <div class="card-thumb"></div>
-                <div class="card-body">
+                <!-- Weather -->
+                <article class="project-card">
                     <h3>Weather App</h3>
                     <ul>
                         <li>Real-time weather via OpenWeather API</li>
-                        <li>Geolocation &amp; search by city</li>
+                        <li>Geolocation &amp; city search</li>
                         <li>Dynamic backgrounds based on conditions</li>
                     </ul>
                     <div class="tech-tags">
-                        <span>JavaScript</span>
-                        <span>API</span>
-                        <span>CSS Flexbox</span>
+                        <span>JavaScript</span> <span>API</span> <span>Flexbox</span>
                     </div>
                     <div class="btn-group">
-                        <a href="https://github.com/bishopkhadir/weather-app" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://github.com/bishopkhadir/weather-app" target="_blank">Repo</a>
                         <a href="https://bishopkhadir.github.io/weather-app/" target="_blank" class="demo-btn">Live Demo →</a>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <!-- 2. Todo List -->
-            <article class="project-card">
-                <div class="card-thumb"></div>
-                <div class="card-body">
+                <!-- Todo -->
+                <article class="project-card">
                     <h3>Todo List</h3>
                     <ul>
-                        <li>Full CRUD with add, edit, delete, and complete</li>
-                        <li>Persistent data with localStorage</li>
-                        <li>Filter tasks by status (All / Active / Done)</li>
+                        <li>Full CRUD: add, edit, delete, complete</li>
+                        <li>Saves data with localStorage</li>
+                        <li>Filter tasks by All / Active / Done</li>
                     </ul>
                     <div class="tech-tags">
-                        <span>JavaScript</span>
-                        <span>DOM</span>
-                        <span>localStorage</span>
+                        <span>JavaScript</span> <span>DOM</span> <span>localStorage</span>
                     </div>
                     <div class="btn-group">
-                        <a href="https://github.com/bishopkhadir/todo-list" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://github.com/bishopkhadir/todo-list" target="_blank">Repo</a>
                         <a href="https://bishopkhadir.github.io/todo-list/" target="_blank" class="demo-btn">Live Demo →</a>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <!-- 3. Calculator -->
-            <article class="project-card">
-                <div class="card-thumb"></div>
-                <div class="card-body">
+                <!-- Calculator -->
+                <article class="project-card">
                     <h3>Calculator</h3>
                     <ul>
-                        <li>Arithmetic operations with keyboard support</li>
-                        <li>Edge-case handling (division by zero, etc.)</li>
-                        <li>Clean, responsive grid-based UI</li>
+                        <li>Arithmetic with keyboard support</li>
+                        <li>Handles division by zero &amp; edge cases</li>
+                        <li>Clean responsive CSS Grid UI</li>
                     </ul>
                     <div class="tech-tags">
-                        <span>CSS Grid</span>
-                        <span>JavaScript</span>
-                        <span>Events</span>
+                        <span>CSS Grid</span> <span>JavaScript</span> <span>Events</span>
                     </div>
                     <div class="btn-group">
-                        <a href="https://github.com/bishopkhadir/calculator" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://github.com/bishopkhadir/calculator" target="_blank">Repo</a>
                         <a href="https://bishopkhadir.github.io/calculator/" target="_blank" class="demo-btn">Live Demo →</a>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <!-- 4. Rock Paper Scissors -->
-            <article class="project-card">
-                <div class="card-thumb"></div>
-                <div class="card-body">
+                <!-- Rock Paper Scissors -->
+                <article class="project-card">
                     <h3>Rock Paper Scissors</h3>
                     <ul>
-                        <li>Play against an AI with randomized moves</li>
-                        <li>Real-time score tracking &amp; result feedback</li>
-                        <li>Animated transitions for each round</li>
+                        <li>Play vs AI with randomized moves</li>
+                        <li>Live score tracking &amp; round feedback</li>
+                        <li>Smooth CSS transition animations</li>
                     </ul>
                     <div class="tech-tags">
-                        <span>JavaScript</span>
-                        <span>CSS Transitions</span>
+                        <span>JavaScript</span> <span>CSS</span> <span>Animations</span>
                     </div>
                     <div class="btn-group">
-                        <a href="https://github.com/bishopkhadir/rock-paper-scissors" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://github.com/bishopkhadir/rock-paper-scissors" target="_blank">Repo</a>
                         <a href="https://bishopkhadir.github.io/rock-paper-scissors/" target="_blank" class="demo-btn">Live Demo →</a>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <!-- 5. Tic Tac Toe -->
-            <article class="project-card">
-                <div class="card-thumb"></div>
-                <div class="card-body">
+                <!-- Tic Tac Toe -->
+                <article class="project-card">
                     <h3>Tic Tac Toe</h3>
                     <ul>
-                        <li>Two-player mode with turn-based logic</li>
-                        <li>Highlights winning combinations</li>
-                        <li>Reset and replay functionality</li>
+                        <li>Two-player turn-based logic</li>
+                        <li>Highlights winning combos</li>
+                        <li>Reset &amp; replay functionality</li>
                     </ul>
                     <div class="tech-tags">
-                        <span>JavaScript</span>
-                        <span>Event Delegation</span>
+                        <span>JavaScript</span> <span>Event Delegation</span>
                     </div>
                     <div class="btn-group">
-                        <a href="https://github.com/bishopkhadir/tic-tac-toe" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://github.com/bishopkhadir/tic-tac-toe" target="_blank">Repo</a>
                         <a href="https://bishopkhadir.github.io/tic-tac-toe/" target="_blank" class="demo-btn">Live Demo →</a>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <!-- 6. Quiz App -->
-            <article class="project-card">
-                <div class="card-thumb"></div>
-                <div class="card-body">
+                <!-- Quiz App -->
+                <article class="project-card">
                     <h3>Quiz App</h3>
                     <ul>
                         <li>Dynamic multiple-choice questions</li>
-                        <li>Score tracking and answer validation</li>
-                        <li>Results summary with correct answers</li>
+                        <li>Score tracking &amp; answer validation</li>
+                        <li>Shows correct answers at the end</li>
                     </ul>
                     <div class="tech-tags">
-                        <span>JavaScript</span>
-                        <span>CSS</span>
-                        <span>Data Structures</span>
+                        <span>JavaScript</span> <span>CSS</span> <span>Data Structures</span>
                     </div>
                     <div class="btn-group">
-                        <a href="https://github.com/bishopkhadir/quiz-app" target="_blank" class="repo-btn">Repo</a>
+                        <a href="https://github.com/bishopkhadir/quiz-app" target="_blank">Repo</a>
                         <a href="https://bishopkhadir.github.io/quiz-app/" target="_blank" class="demo-btn">Live Demo →</a>
                     </div>
-                </div>
-            </article>
+                </article>
 
+            </div>
         </section>
 
         <!-- ===== FOOTER ===== -->
         <footer>
-            <p>&copy; 2025 Lawal Quadri · Built with HTML &amp; CSS</p>
+            <p>&copy; 2025 Lawal Quadri</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/lawalquadri" target="_blank">LinkedIn</a>
                 <a href="https://github.com/bishopkhadir" target="_blank">GitHub</a>
@@ -664,7 +525,6 @@
         </footer>
 
     </div>
-    <!-- end container -->
 
 </body>
 </html>
